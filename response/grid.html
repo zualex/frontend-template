@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<title>Главная</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+</head>
+<body>
+
+
+
+
+<br><br><br>
+	
+
+	<div class="container-grid">
+		<div class="row">
+			<div class="cols col-12">
+				<h2>Адаптивное меню</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cols col-12">
+				<a href="#" id="touch-menu">Меню</a>
+				<nav class="wrap_nav">
+					<ul class="nav">
+						<li><a href="#">Текст_1 Текст_1</a></li>
+						<li>
+							<a href="#">Текст_2</a>
+							<ul>
+								<li><a href="#">Под меню 1</a></li>
+								<li><a href="#">Под меню 2</a></li>
+								<li><a href="#">Под меню 3</a></li>
+								<li><a href="#">Под меню 4</a></li>
+								<li><a href="#">Под меню 5</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Текст_3 Текст_1</a>
+							<ul>
+								<li><a href="#">Под меню 1</a></li>
+								<li><a href="#">Под меню 2</a></li>
+								<li><a href="#">Под меню 3</a></li>
+								<li><a href="#">Под меню 4</a></li>
+								<li><a href="#">Под меню 5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Текст_4</a></li>
+						<li><a href="#">Текст_5</a></li>
+						<li><a href="#">Текст_5</a></li>
+						<li><a href="#">Текст_5</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	
+	<br><br><br>
+	
+	
+	<div class="container-grid">
+		<div class="row">
+			<div class="cols col-12">
+				<h2>Адаптивные изображения</h2>
+				<p>В данном примере изначально подгружается мальенькая картинка 375x500, далее при помощи media queries для разных размеров экрана подгружаются более большие картинки.</p>
+				<p>
+					medium.jpg - от 0 до 768px<br>
+					large.jpg - от 768px до 1200px<br>
+					extralarge.jpg - от 1200px
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cols col-6">
+				<picture>
+					<source srcset="/img/picturefill/extralarge.jpg" media="(min-width: 1200px)">
+					<source srcset="/img/picturefill/large.jpg" media="(min-width: 768px)">
+					<img srcset="/img/picturefill/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+				</picture>
+			</div>
+			<div class="cols col-6">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, dicta, quas fugit pariatur non similique reiciendis at. Culpa, libero, delectus, blanditiis ut aspernatur numquam voluptatum quas veniam veritatis illum error.
+			</div>
+		</div>
+	</div>
+	
+	<br><br><br>
+	
+	<div class="container-grid">
+		<div class="row">
+			<div class="cols col-12">
+				<h2>Адаптивная сетка</h2>
+				<p>Адаптивная сетка имеет 12 колонок</p>
+				<p>
+					Мобильная сетка - от 0 до 768px<br>
+					Десктоп - от 768px до 1200px<br>
+					Большие десктоп - от 1200px
+				</p>
+			</div>
+		</div>
+	</div>
+	<br>
+	
+	<div class="container-grid border">
+		<div class="row">
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+			<div class="cols col-1">col-1</div>
+		</div>
+		<div class="row">
+			<div class="cols col-2">col-2</div>
+			<div class="cols col-2">col-2</div>
+			<div class="cols col-2">col-2</div>
+			<div class="cols col-2">col-2</div>
+			<div class="cols col-2">col-2</div>
+			<div class="cols col-2">col-2</div>
+		</div>
+		<div class="row">
+			<div class="cols col-3">col-3</div>
+			<div class="cols col-3">col-3</div>
+			<div class="cols col-3">col-3</div>
+			<div class="cols col-3">col-3</div>
+		</div>
+		<div class="row">
+			<div class="cols col-4">col-4</div>
+			<div class="cols col-4">col-4</div>
+			<div class="cols col-4">col-4</div>
+		</div>
+		<div class="row">
+			<div class="cols col-5">col-5</div>
+			<div class="cols col-5">col-5</div>
+			<div class="cols col-2">col-2</div>
+		</div>
+		<div class="row">
+			<div class="cols col-6">col-6</div>
+			<div class="cols col-6">col-6</div>
+		</div>
+		<div class="row">
+			<div class="cols col-7">col-7</div>
+			<div class="cols col-5">col-5</div>
+		</div>
+		<div class="row">
+			<div class="cols col-8">col-8</div>
+			<div class="cols col-4">col-4</div>
+		</div>
+		<div class="row">
+			<div class="cols col-9">col-9</div>
+			<div class="cols col-3">col-3</div>
+		</div>
+		<div class="row">
+			<div class="cols col-10">col-10</div>
+			<div class="cols col-2">col-2</div>
+		</div>
+		<div class="row">
+			<div class="cols col-11">col-11</div>
+			<div class="cols col-1">col-1</div>
+		</div>
+		<div class="row">
+			<div class="cols col-12">col-12</div>
+		</div>
+	</div>
+	
+<br><br><br>
+	
+	<script src="/js/jquery-1.11.3.min.js"></script>
+	<script src="/js/picturefill.min.js"></script>
+	
+	<script src="/js/script.js"></script>
+</body>
+</html>
