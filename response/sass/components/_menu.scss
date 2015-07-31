@@ -131,6 +131,7 @@
 
 
 @media (max-width: $menu-display-phone) {
+	.wrap-nav{display:block;}
 	.nav {
 		display:block;
 		overflow-y: hidden;
