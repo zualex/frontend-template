@@ -360,6 +360,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @media (max-width: 768px) {
   /* line 134, ../sass/components/_menu.scss */
+  .wrap-nav {
+    display: block;
+  }
+
+  /* line 135, ../sass/components/_menu.scss */
   .nav {
     display: block;
     overflow-y: hidden;
@@ -368,18 +373,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transition-duration: 500ms;
   }
 
-  /* line 141, ../sass/components/_menu.scss */
+  /* line 142, ../sass/components/_menu.scss */
   .nav.opened {
     max-height: 500px;
     /* approximate max height */
   }
 
-  /* line 148, ../sass/components/_menu.scss */
+  /* line 149, ../sass/components/_menu.scss */
   #touch-menu {
     display: block;
   }
 
-  /* line 149, ../sass/components/_menu.scss */
+  /* line 150, ../sass/components/_menu.scss */
   #touch-menu:after {
     content: "";
     background: url("/img/nav-icon.png") no-repeat;
@@ -391,13 +396,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-top: 2px;
   }
 
-  /* line 160, ../sass/components/_menu.scss */
+  /* line 161, ../sass/components/_menu.scss */
   .nav > li {
     display: block;
     float: none;
   }
 
-  /* line 165, ../sass/components/_menu.scss */
+  /* line 166, ../sass/components/_menu.scss */
   .nav > li a {
     background: #fff;
     color: #666;
@@ -406,7 +411,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     text-align: left;
   }
 
-  /* line 173, ../sass/components/_menu.scss */
+  /* line 174, ../sass/components/_menu.scss */
   .nav > li:hover a {
     background: #f0f0f0;
     color: #333;
@@ -414,30 +419,92 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
 
   /* LEVEL 2*/
-  /* line 181, ../sass/components/_menu.scss */
+  /* line 182, ../sass/components/_menu.scss */
   .nav > li:hover ul {
     display: none;
   }
 }
-/* line 14, ../sass/style.scss */
+/* Responsive table */
+/* line 2, ../sass/components/_table.scss */
+table.responsive {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 11, ../sass/components/_table.scss */
+table.responsive tr {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* line 16, ../sass/components/_table.scss */
+table.responsive th, table.responsive td {
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 21, ../sass/components/_table.scss */
+  table.responsive {
+    border: 0;
+  }
+
+  /* line 23, ../sass/components/_table.scss */
+  table.responsive thead {
+    display: none;
+  }
+
+  /* line 25, ../sass/components/_table.scss */
+  table.responsive tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #ddd;
+  }
+
+  /* line 31, ../sass/components/_table.scss */
+  table.responsive td {
+    display: block;
+    width: 100% \9;
+    float: left\9;
+    text-align: right;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  /* line 39, ../sass/components/_table.scss */
+  table.responsive td:last-child {
+    border-bottom: 0;
+  }
+
+  /* line 41, ../sass/components/_table.scss */
+  table.responsive td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+/* line 15, ../sass/style.scss */
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 body {
   font: 100%/1.5em Arial, Helvetica, sans-serif;
   color: #000;
 }
 
-/* line 25, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 29, ../sass/style.scss */
+/* line 30, ../sass/style.scss */
 img {
   max-width: 100%;
   height: auto;

@@ -13,7 +13,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	
 </head>
 <body>
@@ -84,9 +84,9 @@
 		<div class="row">
 			<div class="cols col-6">
 				<picture>
-					<source srcset="/img/picturefill/extralarge.jpg" media="(min-width: 1200px)">
-					<source srcset="/img/picturefill/large.jpg" media="(min-width: 768px)">
-					<img srcset="/img/picturefill/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+					<source srcset="img/picturefill/extralarge.jpg" media="(min-width: 1200px)">
+					<source srcset="img/picturefill/large.jpg" media="(min-width: 768px)">
+					<img srcset="img/picturefill/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
 				</picture>
 			</div>
 			<div class="cols col-6">
@@ -96,6 +96,45 @@
 	</div>
 	
 	<br><br><br>
+	
+	<div class="container-grid">
+		<div class="row">
+			<div class="cols col-12">
+				<h2>Адаптивная таблица</h2>
+			</div>
+		</div>
+		<div class="row">
+			<table class="responsive">
+			  <thead>
+				<tr>
+				  <th>Payment</th>
+				  <th>Issue Date</th>
+				  <th>Amount</th>
+				  <th>Period</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td data-label="Payment">Payment #1</td>
+				  <td data-label="Issue Date">02/01/2015</td>
+				  <td data-label="Amount">$2,311</td>
+				  <td data-label="Period">01/01/2015 - 01/31/2015</td>
+				</tr>
+				<tr>
+				  <td data-label="Payment">Payment #2</td>
+				  <td data-label="Issue Date">03/01/2015</td>
+				  <td data-label="Amount">$3,211</td>
+				  <td data-label="Period">02/01/2015 - 02/28/2015</td>
+				</tr>
+			  </tbody>
+			</table>
+
+		</div>
+	</div>
+	
+	<br><br><br>
+	
+	
 	
 	<div class="container-grid">
 		<div class="row">
@@ -182,9 +221,9 @@
 	
 <br><br><br>
 	
-	<script src="/js/jquery-1.11.3.min.js"></script>
-	<script src="/js/picturefill.min.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/picturefill.min.js"></script>
 	
-	<script src="/js/script.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
