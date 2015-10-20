@@ -1,4 +1,4 @@
-# Response template
+# Simple responsive template
 Template use:
 <ul>
   <li>Sass + Compass</li>
