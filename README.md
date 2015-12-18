@@ -1,4 +1,7 @@
 # Simple responsive template
+Install gulp dependencies:
+npm install
+
 Template use:
 <ul>
   <li>Sass + Compass</li>

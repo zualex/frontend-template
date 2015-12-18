@@ -1,0 +1,19 @@
+﻿*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body{
+	font: 100%/1.5em Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{
+	display: block;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}

@@ -1,0 +1,21 @@
+/* utils - инструменты и помощники Sass */
+@import "utils/reset";
+@import 'utils/variables';
+
+
+/* base - общий шаблон проекта */
+@import 'base/base';
+@import 'base/clearfix';
+
+
+/* layout - определяет общий каркас */
+@import 'layout/grid';
+
+
+/* components - компоненты сайта*/
+@import 'components/menu';
+@import 'components/table';
+
+
+/* Файл позора */
+@import 'shame';
