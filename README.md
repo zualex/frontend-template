@@ -1,12 +1,9 @@
 # Simple responsive template
-Install gulp dependencies:
-npm install
-
 Template use:
 <ul>
-  <li>Sass + Compass</li>
-  <li>picturefill.js</li>
+  <li>gulp</li>
   <li>Responsive grid</li>
+  <li>Responsive table</li>
   <li>Responsive menu with 4 type animation dropdown:
 		<ul>
 			<li>Fold Out</li>
@@ -15,7 +12,27 @@ Template use:
 			<li>Not Animated</li>
 		</ul>
   </li>
-  <li>Responsive table</li>
 </ul>
 
-For example, set animation type "Slide Down" needs open file "<a href="https://github.com/zualex32/frontend-templates/blob/master/response/sass/components/_variables.scss" >sass/components/_variables.scss</a>" and change variable $menu-type-animation
+# Usage
+through npm:
+
+```bash
+npm install
+```
+
+Then install dependencies:
+
+```json
+"dependencies": {
+    "gulp-sass": "*",
+    "gulp.spritesmith": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-minify-css": "*",
+    "gulp-uglify": "*"
+  }
+```
+
+# Example
+For example, set animation type "Slide Down" needs open file "<a href="https://github.com/zualex32/frontend-template/blob/master/build/sass/utils/_variables.scss" >/build/sass/utils/_variables.scss</a>" and change variable $menu-type-animation
