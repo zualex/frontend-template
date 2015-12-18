@@ -15,13 +15,13 @@ Template use:
 </ul>
 
 # Usage
-through npm:
+Install dependencies through npm:
 
 ```bash
 npm install
 ```
 
-Then install dependencies:
+Used dependencies:
 
 ```json
 "dependencies": {
