@@ -4,23 +4,24 @@
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+	min-width:290px;
+	
+	.row{
+		position:relative;
+		
+		&.center{text-align:center;}
+	}
+	
+	.cols{
+		position:relative;
+		float:left;
+	}
+	
+	&.border .cols{
+		border:1px solid #ccc;
+	}
 }
 
-
-
-.container-grid .row{
-	position:relative;
-}
-
-
-
-.container-grid .cols{
-	position:relative;
-	float:left;
-}
-.container-grid.border .cols{
-	border:1px solid #ccc;
-}
 
 
 

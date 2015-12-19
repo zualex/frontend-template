@@ -6,6 +6,7 @@
 /* base - общий шаблон проекта */
 @import 'base/base';
 @import 'base/clearfix';
+@import 'base/typography';
 
 
 /* layout - определяет общий каркас */
@@ -15,6 +16,7 @@
 /* components - компоненты сайта*/
 @import 'components/menu';
 @import 'components/table';
+@import 'components/button';
 
 
 /* Файл позора */
