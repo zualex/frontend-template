@@ -4,6 +4,7 @@ var spritesmith = require('gulp.spritesmith');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
+var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 
 
@@ -17,9 +18,13 @@ var paths = {
 	sass_watch: ['./build/sass/*', './build/sass/*/*'],
 	sass_res: './src/css',
 	
+	css_src: ['./src/css/*.css', '!./src/css/*.min.css'],
+	css_res: './src/css',
+	
 	js_src: ['./build/js/jquery/*.js', './build/js/vendors/*.js', './build/js/*.js'],
 	js_folder: './src/js',
 	js_name: 'app.js',
+	js_min_name: 'app.min.js',
 };
 
 
@@ -50,8 +55,21 @@ gulp.task('sass', function () {
 			browsers: ['last 3 versions'],
 			cascade: false
 		}))
-		.pipe(minifyCss({compatibility: 'ie8'}))
 		.pipe(gulp.dest(paths.sass_res));
+});
+
+
+
+/*
+* minify-css
+*/
+gulp.task('minify-css', function() {
+	gulp.src(paths.css_src)
+		.pipe(minifyCss({compatibility: 'ie8'}))
+		.pipe(rename({
+            suffix: '.min'
+        }))
+		.pipe(gulp.dest(paths.css_res));
 });
 
 
@@ -62,6 +80,17 @@ gulp.task('sass', function () {
 gulp.task('js', function() {
 	gulp.src(paths.js_src)
 		.pipe(concat(paths.js_name))
+		.pipe(gulp.dest(paths.js_folder));
+});
+
+
+
+/*
+* minify-js
+*/
+gulp.task('minify-js', function() {
+	gulp.src(paths.js_src)
+		.pipe(concat(paths.js_min_name))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.js_folder));
 });
@@ -71,8 +100,8 @@ gulp.task('js', function() {
 * watch
 */
 gulp.task('watch', function() {
-	gulp.watch(paths.sass_watch, ['sprite', 'sass']);
-	gulp.watch(paths.js_src, ['js']);
+	gulp.watch(paths.sass_watch, ['sprite', 'sass', 'minify-css']);
+	gulp.watch(paths.js_src, ['js', 'minify-js']);
 });
 
 
@@ -81,5 +110,5 @@ gulp.task('watch', function() {
 * default
 */
 gulp.task('default', function() { 
-	gulp.run('sprite', 'sass', 'js');
+	gulp.run('sprite', 'sass', 'minify-css', 'js', 'minify-js');
 });

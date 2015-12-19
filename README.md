@@ -30,6 +30,7 @@ Used dependencies:
     "gulp-autoprefixer": "*",
     "gulp-concat": "*",
     "gulp-minify-css": "*",
+    "gulp-rename": "*",
     "gulp-uglify": "*"
   }
 ```
