@@ -11,44 +11,22 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
-$extralarge-name: 'extralarge';
-$extralarge-x: 0px;
-$extralarge-y: 1220px;
-$extralarge-offset-x: 0px;
-$extralarge-offset-y: -1220px;
-$extralarge-width: 768px;
-$extralarge-height: 1024px;
-$extralarge-total-width: 768px;
-$extralarge-total-height: 2244px;
-$extralarge-image: '../../../../../sprite.png';
-$extralarge: (0px, 1220px, 0px, -1220px, 768px, 1024px, 768px, 2244px, '../../../../../sprite.png', 'extralarge', );
-$large-name: 'large';
-$large-x: 0px;
-$large-y: 540px;
-$large-offset-x: 0px;
-$large-offset-y: -540px;
-$large-width: 480px;
-$large-height: 640px;
-$large-total-width: 768px;
-$large-total-height: 2244px;
-$large-image: '../../../../../sprite.png';
-$large: (0px, 540px, 0px, -540px, 480px, 640px, 768px, 2244px, '../../../../../sprite.png', 'large', );
-$medium-name: 'medium';
-$medium-x: 0px;
-$medium-y: 0px;
-$medium-offset-x: 0px;
-$medium-offset-y: 0px;
-$medium-width: 375px;
-$medium-height: 500px;
-$medium-total-width: 768px;
-$medium-total-height: 2244px;
-$medium-image: '../../../../../sprite.png';
-$medium: (0px, 0px, 0px, 0px, 375px, 500px, 768px, 2244px, '../../../../../sprite.png', 'medium', );
-$spritesheet-width: 768px;
-$spritesheet-height: 2244px;
-$spritesheet-image: '../../../../../sprite.png';
-$spritesheet-sprites: ($extralarge, $large, $medium, );
-$spritesheet: (768px, 2244px, '../../../../../sprite.png', $spritesheet-sprites, );
+$nav-icon-name: 'nav-icon';
+$nav-icon-x: 0px;
+$nav-icon-y: 0px;
+$nav-icon-offset-x: 0px;
+$nav-icon-offset-y: 0px;
+$nav-icon-width: 20px;
+$nav-icon-height: 20px;
+$nav-icon-total-width: 20px;
+$nav-icon-total-height: 20px;
+$nav-icon-image: '../sprite/sprite.png';
+$nav-icon: (0px, 0px, 0px, 0px, 20px, 20px, 20px, 20px, '../sprite/sprite.png', 'nav-icon', );
+$spritesheet-width: 20px;
+$spritesheet-height: 20px;
+$spritesheet-image: '../sprite/sprite.png';
+$spritesheet-sprites: ($nav-icon, );
+$spritesheet: (20px, 20px, '../sprite/sprite.png', $spritesheet-sprites, );
 
 /*
 The provided mixins are intended to be used with the array-like variables

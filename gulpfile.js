@@ -9,10 +9,12 @@ var uglify = require('gulp-uglify');
 
 
 var paths = {
-	sprite_src: './src/img-sprites/*',
-	sprite_img: 'sprite.png',
-	sprite_file: '../../src/sass/utils/_sprite.scss',
-	sprite_res: './dist/img-sprites/',
+	sprite_src: './src/sprite/*',
+	sprite_imgName: 'sprite.png',
+	sprite_fileName: '_sprite.scss',
+	sprite_imgPath: '../sprite/sprite.png',
+	sprite_resImg: './dist/sprite/',
+	sprite_resFile: './src/sass/utils/',
 	
 	sass_src: './src/sass/*.scss',
 	sass_watch: ['./src/sass/*', './src/sass/*/*'],
@@ -32,15 +34,17 @@ var paths = {
 * sprite
 */
 gulp.task('sprite', function () {
-	gulp.src(paths.sprite_src)
+	 var spriteData = gulp.src(paths.sprite_src)
 		.pipe(spritesmith({
-			imgName: paths.sprite_img,
-			cssName: paths.sprite_file,
+			imgName: paths.sprite_imgName,
+			cssName: paths.sprite_fileName,
+			imgPath : paths.sprite_imgPath,
 			cssFormat: 'scss',
 			algorithm: 'top-down',
 			padding: 40
-		}))
-		.pipe(gulp.dest(paths.sprite_res));
+		}));
+	spriteData.img.pipe(gulp.dest(paths.sprite_resImg));
+    spriteData.css.pipe(gulp.dest(paths.sprite_resFile)); 
 });
 
 

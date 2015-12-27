@@ -20,9 +20,7 @@
 	
 	&:after {
 		content:"";
-		background: url('#{$path-img}/nav-icon.png') no-repeat;
-		width: 20px;
-		height: 20px;
+		@include sprite($nav-icon)
 		display: inline-block;
 		position: absolute;
 		right: 15px;
