@@ -225,7 +225,7 @@ a {
     background: #313131; }
   #touch-menu:after {
     content: "";
-    background: url("/images/nav-icon.png") no-repeat;
+    background: url("../../images/nav-icon.png") no-repeat;
     width: 20px;
     height: 20px;
     display: inline-block;
@@ -254,6 +254,7 @@ a {
       border-bottom: 1px solid #eee;
       border-left: 3px solid transparent;
       text-align: left;
+      text-decoration: none;
       white-space: nowrap;
       transition-property: background, color, border;
       transition-duration: 300ms; }
@@ -283,7 +284,6 @@ a {
       .nav li a {
         background: transparent;
         color: #fff;
-        text-decoration: none;
         text-align: center;
         border-bottom: 0px;
         border-left: 0px; }

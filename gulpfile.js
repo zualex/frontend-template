@@ -9,20 +9,20 @@ var uglify = require('gulp-uglify');
 
 
 var paths = {
-	sprite_src: './build/img-sprites/*',
+	sprite_src: './src/img-sprites/*',
 	sprite_img: 'sprite.png',
-	sprite_file: '../../build/sass/utils/_sprite.scss',
-	sprite_res: './src/img-sprites/',
+	sprite_file: '../../src/sass/utils/_sprite.scss',
+	sprite_res: './dist/img-sprites/',
 	
-	sass_src: './build/sass/*.scss',
-	sass_watch: ['./build/sass/*', './build/sass/*/*'],
-	sass_res: './src/css',
+	sass_src: './src/sass/*.scss',
+	sass_watch: ['./src/sass/*', './src/sass/*/*'],
+	sass_res: './dist/css',
 	
-	css_src: ['./src/css/*.css', '!./src/css/*.min.css'],
-	css_res: './src/css',
+	css_src: ['./dist/css/*.css', '!./dist/css/*.min.css'],
+	css_res: './dist/css',
 	
-	js_src: ['./build/js/jquery/*.js', './build/js/vendors/*.js', './build/js/*.js'],
-	js_folder: './src/js',
+	js_src: ['./src/js/jquery/*.js', './src/js/vendors/*.js', './src/js/*.js'],
+	js_folder: './dist/js',
 	js_name: 'app.js',
 	js_min_name: 'app.min.js',
 };
@@ -55,16 +55,7 @@ gulp.task('sass', function () {
 			browsers: ['last 3 versions'],
 			cascade: false
 		}))
-		.pipe(gulp.dest(paths.sass_res));
-});
-
-
-
-/*
-* minify-css
-*/
-gulp.task('minify-css', function() {
-	gulp.src(paths.css_src)
+		.pipe(gulp.dest(paths.sass_res))
 		.pipe(minifyCss({compatibility: 'ie8'}))
 		.pipe(rename({
             suffix: '.min'
@@ -100,7 +91,7 @@ gulp.task('minify-js', function() {
 * watch
 */
 gulp.task('watch', function() {
-	gulp.watch(paths.sass_watch, ['sprite', 'sass', 'minify-css']);
+	gulp.watch(paths.sass_watch, ['sprite', 'sass']);
 	gulp.watch(paths.js_src, ['js', 'minify-js']);
 });
 
@@ -110,5 +101,5 @@ gulp.task('watch', function() {
 * default
 */
 gulp.task('default', function() { 
-	gulp.run('sprite', 'sass', 'minify-css', 'js', 'minify-js');
+	gulp.run('sprite', 'sass', 'js', 'minify-js');
 });
