@@ -1,10 +1,9 @@
-# Simple responsive template
-Template use:
+# Простой адаптивный шаблон
+В шаблоне используются адаптивные:
 <ul>
-  <li>gulp</li>
-  <li>Responsive grid</li>
-  <li>Responsive table</li>
-  <li>Responsive menu with 4 type animation dropdown:
+  <li>Cетка из 12 колонок</li>
+  <li>Таблица</li>
+  <li>Меню с 4 типами анимации:
 		<ul>
 			<li>Fold Out</li>
 			<li>Slide Down</li>
@@ -14,26 +13,49 @@ Template use:
   </li>
 </ul>
 
-# Usage
-Install dependencies through npm:
+Также в шаблоне применяются:
+<ul>
+  <li><a href="http://gulpjs.com/">Gulp</a></li>
+  <li><a href="http://bower.io/">Bower</a></li>
+  <li><a href="http://sass-lang.com/">Sass</a></li>
+  <li><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></li>
+  <li>Объединение и сжатие CSS и JS</li>
+  <li>Объединение изображений в спрайт</li>
+  <li><a href="http://sass-guidelin.es/ru/">Руководство по написанию разумного, поддерживаемого и масштабируемого Sass</a></li>
+</ul>
+
+# Начало
+Для того чтобы использовать данный шаблон, необходим установленный <a href="https://nodejs.org">Node.JS<a>.
+Установить все нужные пакеты можно через npm, выполнив следующую команду:
 
 ```bash
 npm install
 ```
 
-Used dependencies:
+Далее необходимо установить сторонние библиотеки, выполнив следующую команду:
 
-```json
-"dependencies": {
-    "gulp-sass": "*",
-    "gulp.spritesmith": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-concat": "*",
-    "gulp-minify-css": "*",
-    "gulp-rename": "*",
-    "gulp-uglify": "*"
-  }
+```bash
+bower install
 ```
 
-# Example
-For example, set animation type "Slide Down" needs open file "<a href="https://github.com/zualex32/frontend-template/blob/master/build/sass/utils/_variables.scss" >/build/sass/utils/_variables.scss</a>" and change variable $menu-type-animation
+Для того чтобы запустить сборку gulp, выполните следующую команду:
+```bash
+gulp
+```
+
+Для того чтобы сборка запускалась автоматичеки при изменении файлов, выполните следующую команду:
+```bash
+gulp watch
+```
+`Сборка проекта происходит при изменении файлов в "/src/sass/" и "/src/js/" `
+
+
+
+# Практика
+<ul>
+  <li>В папке `src` необходимо писать CSS и JS код, а также загружить изображения для спрайтов.<br>
+В папку `dist` сборщик выплевывает готовые файлы.
+  </li>
+  <li>Для того чтобы установить тип анимации меню на "Slide Down" нужно в файле "<a href="https://github.com/zualex32/frontend-template/blob/master/build/sass/utils/_variables.scss" >/build/sass/utils/_variables.scss</a>" изменить значение переменной $menu-type-animation на "Slide Down".</li>
+</ul>
+
