@@ -14,7 +14,8 @@
     "gulp-rename": "*",
     "gulp-uglify": "*",
     "gulp-main-bower-files": "*",
-    "gulp-filter": "*"
+    "gulp-filter": "*",
+    "browser-sync": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

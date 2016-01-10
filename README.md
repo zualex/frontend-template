@@ -17,6 +17,7 @@
 <ul>
   <li><a href="http://gulpjs.com/">Gulp</a></li>
   <li><a href="http://bower.io/">Bower</a></li>
+  <li><a href="https://www.browsersync.io/">Browser-sync</a> - автоматическая перезагрузка страницы при изменении кода</li>
   <li><a href="http://sass-lang.com/">Sass</a></li>
   <li><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></li>
   <li>Объединение и сжатие CSS и JS</li>
@@ -38,24 +39,29 @@ npm install
 bower install
 ```
 
-Для того чтобы запустить сборку gulp, выполните следующую команду:
-```bash
-gulp
-```
-
-Для того чтобы сборка запускалась автоматичеки при изменении файлов, выполните следующую команду:
-```bash
-gulp watch
-```
-`Сборка проекта происходит при изменении файлов в "/src/sass/" и "/src/js/" `
-
-
 
 # Практика
-<ul>
-  <li>В папке `src` необходимо писать CSS и JS код, а также загружать изображения для спрайтов.<br>
-В папку `dist` сборщик выплевывает готовые файлы.
-  </li>
-  <li>Для того чтобы установить тип анимации меню на "Slide Down" нужно в файле "<a href="https://github.com/zualex32/frontend-template/blob/master/build/sass/utils/_variables.scss" >/build/sass/utils/_variables.scss</a>" изменить значение переменной $menu-type-animation на "Slide Down".</li>
-</ul>
+Запустить сборщик с использованием browser-sync, можно выполнив следующую команду:
+```bash
+gulp serve
+```
+<br>
+Дождитесь выполнения команды, по завершению в браузере откроется страница `http://localhost:3000/`.<br>
+Теперь при изменении файлов `*.html`, `/src/sass/` и `/src/js/`, автоматически произойдет сборка проекта и перезагрузится страница в браузере.<br>
+<br>
+В папке `src` необходимо писать CSS и JS код, а также загружать изображения для спрайтов.<br>
+В папку `dist` сборщик выплевывает готовые файлы.<br>
+<br>
+Сущестую следующие команды для gulp:<br>
+`gulp` - запуск полной сборки проекта.<br>
+`gulp watch` - запуск сборки проекта, только при изменении в файлах `/src/sass/` и `/src/js/`.<br>
+`gulp serve` - запуск сборки проектас использованием browser-sync.<br>
+`gulp js` - объединение и сжатие JS файлов.<br>
+`gulp css` - объединение и сжатие css файлов.<br>
+`gulp sass` - scss файлы преобразует в css файлы.<br>
+`gulp sprite` - генерация спрайтов.<br>
+`gulp bower` - получение и объединение стороних JS и CSS файлов.<br>
+<br>
+Для того чтобы установить тип анимации меню на "Slide Down" нужно в файле "<a href="https://github.com/zualex32/frontend-template/blob/master/build/sass/utils/_variables.scss" >/build/sass/utils/_variables.scss</a>" изменить значение переменной $menu-type-animation на "Slide Down".
+
 

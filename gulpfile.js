@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var mainBowerFiles = require('gulp-main-bower-files');
 var gulpFilter = require('gulp-filter');
+var browserSync = require('browser-sync').create();
 
 
 
@@ -106,7 +107,8 @@ gulp.task('css', ['sass', 'bower'], function() {
 		.pipe(gulp.dest(paths.css_folder))
 		.pipe(concat(paths.css_min_name))
 		.pipe(minifyCss({compatibility: 'ie8'}))
-		.pipe(gulp.dest(paths.css_folder));
+		.pipe(gulp.dest(paths.css_folder))
+		.pipe(browserSync.stream());
 });
 
 
@@ -120,7 +122,8 @@ gulp.task('js', function() {
 		.pipe(gulp.dest(paths.js_folder))
 		.pipe(concat(paths.js_min_name))
 		.pipe(uglify())
-		.pipe(gulp.dest(paths.js_folder));
+		.pipe(gulp.dest(paths.js_folder))
+		.pipe(browserSync.stream());
 });
 
 
@@ -140,4 +143,19 @@ gulp.task('watch', function() {
 */
 gulp.task('default', function() { 
 	gulp.run('css', 'js');
+});
+
+
+
+gulp.task('serve', function() {
+
+    browserSync.init({
+		server: {
+            baseDir: "./"
+        }
+    });
+	
+	gulp.watch(paths.css_watch, ['css']);
+	gulp.watch(paths.js_watch, ['js']);
+	gulp.watch("*.html").on('change', browserSync.reload);
 });
