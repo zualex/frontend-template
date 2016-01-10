@@ -10,26 +10,57 @@ var mainBowerFiles = require('gulp-main-bower-files');
 var gulpFilter = require('gulp-filter');
 
 
+
+var pathDist = './dist';
+var pathSrc = './src';
+
 var paths = {
-	sprite_src: './src/sprite/*',
+	bower: pathDist + '/vendor',
+
+	sprite_src: pathSrc + '/sprite/*',
 	sprite_imgName: 'sprite.png',
 	sprite_fileName: '_sprite.scss',
 	sprite_imgPath: '../sprite/sprite.png',
-	sprite_resImg: './dist/sprite/',
-	sprite_resFile: './src/sass/utils/',
+	sprite_resImg:  pathDist + '/sprite/',
+	sprite_resFile: pathSrc + '/sass/utils/',
 	
-	sass_src: './src/sass/*.scss',
-	sass_watch: ['./src/sass/*', './src/sass/*/*'],
-	sass_res: './dist/css',
+	sass_src: pathSrc + '/sass/*.scss',
+	sass_res: pathDist + '/sass',
 	
-	css_src: ['./dist/css/*.css', '!./dist/css/*.min.css'],
-	css_res: './dist/css',
+	css_src: [pathDist + '/vendor/all.css', pathDist + '/sass/*.css'],
+	css_folder: pathDist + '/css',
+	css_name: 'style.css',
+	css_min_name: 'style.min.css',
 	
-	js_src: ['./src/js/jquery/*.js', './src/js/vendors/*.js', './src/js/*.js'],
-	js_folder: './dist/js',
+	js_src: [pathDist + '/vendor/all.js', pathSrc + '/js/*.js'],
+	js_folder: pathDist + '/js',
 	js_name: 'app.js',
 	js_min_name: 'app.min.js',
+	
+	css_watch: [pathSrc + '/sass/*', pathSrc + '/sass/*/*', '!'+pathSrc + '/sass/utils/_sprite.scss'],
+	js_watch: [pathSrc + '/js/*.js'],
 };
+
+
+
+/*
+* bower
+*/
+gulp.task('bower', function () {
+	var filterJS = gulpFilter('**/*.js', { restore: true });
+	var filterCSS = gulpFilter('**/*.css', { restore: true });
+	
+	return gulp.src('./bower.json')
+		.pipe(mainBowerFiles())
+		.pipe(filterJS)
+		.pipe(concat('all.js'))
+		.pipe(filterJS.restore)
+		.pipe(filterCSS)
+		.pipe(concat('all.css'))
+		.pipe(filterCSS.restore)
+		.pipe(gulp.dest(paths.bower)); 
+});
+
 
 
 /*
@@ -46,27 +77,36 @@ gulp.task('sprite', function () {
 			padding: 40
 		}));
 	spriteData.img.pipe(gulp.dest(paths.sprite_resImg));
-    spriteData.css.pipe(gulp.dest(paths.sprite_resFile)); 
+    return spriteData.css.pipe(gulp.dest(paths.sprite_resFile)); 
 });
 
 
 
 /*
-* sass
+* sass - эта задача не запустится пока задача sprite не закончит работу!
 */
-gulp.task('sass', function () {
-	gulp.src(paths.sass_src)
+gulp.task('sass', ['sprite'], function () {
+	return gulp.src(paths.sass_src)
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
 			browsers: ['last 3 versions'],
 			cascade: false
 		}))
-		.pipe(gulp.dest(paths.sass_res))
+		.pipe(gulp.dest(paths.sass_res));
+});
+
+
+
+/*
+* css - эта задача не запустится пока задачи sass и bower не закончит работу!
+*/
+gulp.task('css', ['sass', 'bower'], function() {
+	return gulp.src(paths.css_src)
+		.pipe(concat(paths.css_name))
+		.pipe(gulp.dest(paths.css_folder))
+		.pipe(concat(paths.css_min_name))
 		.pipe(minifyCss({compatibility: 'ie8'}))
-		.pipe(rename({
-            suffix: '.min'
-        }))
-		.pipe(gulp.dest(paths.css_res));
+		.pipe(gulp.dest(paths.css_folder));
 });
 
 
@@ -77,28 +117,20 @@ gulp.task('sass', function () {
 gulp.task('js', function() {
 	gulp.src(paths.js_src)
 		.pipe(concat(paths.js_name))
-		.pipe(gulp.dest(paths.js_folder));
-});
-
-
-
-/*
-* minify-js
-*/
-gulp.task('minify-js', function() {
-	gulp.src(paths.js_src)
+		.pipe(gulp.dest(paths.js_folder))
 		.pipe(concat(paths.js_min_name))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.js_folder));
 });
 
 
+
 /*
 * watch
 */
 gulp.task('watch', function() {
-	gulp.watch(paths.sass_watch, ['sprite', 'sass']);
-	gulp.watch(paths.js_src, ['js', 'minify-js']);
+	gulp.watch(paths.css_watch, ['css']);
+	gulp.watch(paths.js_watch, ['js']);
 });
 
 
@@ -107,23 +139,5 @@ gulp.task('watch', function() {
 * default
 */
 gulp.task('default', function() { 
-	gulp.run('sprite', 'sass', 'js', 'minify-js');
+	gulp.run('css', 'js');
 });
-
-
-
-gulp.task('bower', function () {
-	var filterJS = gulpFilter('**/*.js', { restore: true });
-	var filterCSS = gulpFilter('**/*.css', { restore: true });
-	
-	gulp.src('./bower.json')
-		.pipe(mainBowerFiles())
-		.pipe(filterJS)
-		.pipe(concat('vendor.js'))
-		.pipe(filterJS.restore)
-		.pipe(filterCSS)
-		.pipe(concat('vendor.css'))
-		.pipe(filterCSS.restore)
-		.pipe(gulp.dest('./lib')); 
-});
-
