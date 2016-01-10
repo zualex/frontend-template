@@ -53,7 +53,7 @@ gulp watch
 
 # Практика
 <ul>
-  <li>В папке `src` необходимо писать CSS и JS код, а также загружить изображения для спрайтов.<br>
+  <li>В папке `src` необходимо писать CSS и JS код, а также загружать изображения для спрайтов.<br>
 В папку `dist` сборщик выплевывает готовые файлы.
   </li>
   <li>Для того чтобы установить тип анимации меню на "Slide Down" нужно в файле "<a href="https://github.com/zualex32/frontend-template/blob/master/build/sass/utils/_variables.scss" >/build/sass/utils/_variables.scss</a>" изменить значение переменной $menu-type-animation на "Slide Down".</li>
