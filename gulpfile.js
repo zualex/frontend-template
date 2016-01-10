@@ -6,6 +6,8 @@ var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var mainBowerFiles = require('gulp-main-bower-files');
+var gulpFilter = require('gulp-filter');
 
 
 var paths = {
@@ -107,3 +109,21 @@ gulp.task('watch', function() {
 gulp.task('default', function() { 
 	gulp.run('sprite', 'sass', 'js', 'minify-js');
 });
+
+
+
+gulp.task('bower', function () {
+	var filterJS = gulpFilter('**/*.js', { restore: true });
+	var filterCSS = gulpFilter('**/*.css', { restore: true });
+	
+	gulp.src('./bower.json')
+		.pipe(mainBowerFiles())
+		.pipe(filterJS)
+		.pipe(concat('vendor.js'))
+		.pipe(filterJS.restore)
+		.pipe(filterCSS)
+		.pipe(concat('vendor.css'))
+		.pipe(filterCSS.restore)
+		.pipe(gulp.dest('./lib')); 
+});
+
