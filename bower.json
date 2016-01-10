@@ -1,0 +1,25 @@
+{
+  "name": "frontend-template",
+  "description": "frontend-template",
+  "main": "gulpfile.js",
+  "authors": [
+    "zualex32"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "frontend-template"
+  ],
+  "homepage": "https://github.com/zualex32/frontend-template",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "1.11.*"
+  }
+}
