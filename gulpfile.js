@@ -8,6 +8,8 @@ var uglify = require('gulp-uglify');									// Сжатие JS
 var rename = require('gulp-rename');								// Переименовывание файлов
 var mainBowerFiles = require('gulp-main-bower-files');	// Вытягивание главных файлов из стороних библиотек
 var gulpFilter = require('gulp-filter');								// Маска для поиска файлов
+var notify = require("gulp-notify");									// Системные уведомления
+var plumber = require('gulp-plumber');							// Для уведомлений ошибок
 var browserSync = require('browser-sync').create();		// Livereload
 
 
@@ -52,6 +54,7 @@ gulp.task('bower', function () {
 	var filterCSS = gulpFilter('**/*.css', { restore: true });
 	
 	return gulp.src('./bower.json')
+		.pipe(plumber({errorHandler: notify.onError("Bower error: <%= error.message %>")}))
 		.pipe(mainBowerFiles())
 		.pipe(filterJS)
 		.pipe(concat('all.js'))
@@ -69,6 +72,7 @@ gulp.task('bower', function () {
 */
 gulp.task('sprite', function () {
 	 var spriteData = gulp.src(paths.sprite_src)
+		.pipe(plumber({errorHandler: notify.onError("Sass error: <%= error.message %>")}))
 		.pipe(spritesmith({
 			imgName: paths.sprite_imgName,
 			cssName: paths.sprite_fileName,
@@ -88,6 +92,7 @@ gulp.task('sprite', function () {
 */
 gulp.task('sass', ['sprite'], function () {
 	return gulp.src(paths.sass_src)
+		.pipe(plumber({errorHandler: notify.onError("Sass error: <%= error.message %>")}))
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
 			browsers: ['last 3 versions'],
@@ -103,6 +108,7 @@ gulp.task('sass', ['sprite'], function () {
 */
 gulp.task('css', ['sass', 'bower'], function() {
 	return gulp.src(paths.css_src)
+		.pipe(plumber({errorHandler: notify.onError("Sass error: <%= error.message %>")}))
 		.pipe(concat(paths.css_name))
 		.pipe(gulp.dest(paths.css_folder))
 		.pipe(concat(paths.css_min_name))
@@ -118,6 +124,7 @@ gulp.task('css', ['sass', 'bower'], function() {
 */
 gulp.task('js', function() {
 	gulp.src(paths.js_src)
+		.pipe(plumber({errorHandler: notify.onError("Sass error: <%= error.message %>")}))
 		.pipe(concat(paths.js_name))
 		.pipe(gulp.dest(paths.js_folder))
 		.pipe(concat(paths.js_min_name))
