@@ -1,19 +1,19 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var spritesmith = require('gulp.spritesmith');
+var sass = require('gulp-sass');	
 var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var mainBowerFiles = require('gulp-main-bower-files');
-var gulpFilter = require('gulp-filter');
-var browserSync = require('browser-sync').create();
+var spritesmith = require('gulp.spritesmith');					// Для работы спрайтов
+var concat = require('gulp-concat');								// Объединение файлов
+var minifyCss = require('gulp-minify-css');						// Сжатие css
+var uglify = require('gulp-uglify');									// Сжатие JS
+var rename = require('gulp-rename');								// Переименовывание файлов
+var mainBowerFiles = require('gulp-main-bower-files');	// Вытягивание главных файлов из стороних библиотек
+var gulpFilter = require('gulp-filter');								// Маска для поиска файлов
+var browserSync = require('browser-sync').create();		// Livereload
 
 
 
-var pathDist = './dist';
-var pathSrc = './src';
+var pathDist = './dist';		// Путь куда будут собираться файлы
+var pathSrc = './src';			// Путь откуда беруться файлы для сборки
 
 var paths = {
 	bower: pathDist + '/vendor',
