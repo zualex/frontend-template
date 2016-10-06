@@ -1,0 +1,21 @@
+.button {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  padding: 0 40px;
+  margin: 10px 15px;
+  height: 48px;
+  line-height: 48px;
+  border: 1px solid #212121;
+  border-radius: 2px;
+  color: #212121;
+  font-size: 20px;
+  text-decoration:none;
+  transition-property: background-color, color;
+  transition-duration: .3s;
+
+  &:hover{
+    background-color: #212121;
+    color: #fff;
+  }
+}

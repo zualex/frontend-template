@@ -1,0 +1,371 @@
+/* Grid */
+/* Menu */
+/* Path */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
+body {
+  font: 100%/1.5em Arial, Helvetica, sans-serif;
+  color: #000; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.container-grid:before,
+.container-grid:after,
+.row:before,
+.row:after,
+.clear:before,
+.clear:after {
+  content: " ";
+  display: table; }
+
+.container-grid:after,
+.row:after,
+.clear:after {
+  clear: both; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #212121;
+  margin: 0; }
+
+h1 {
+  font-size: 48px;
+  line-height: 48px;
+  padding: 15px 0;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 32px;
+  line-height: 32px;
+  padding: 10px 0; }
+
+a {
+  color: #212121; }
+
+.header-section {
+  padding: 30px 0;
+  background: #fff; }
+
+.page-section {
+  padding: 30px 0;
+  background: #eee; }
+
+.button-section {
+  padding-top: 20px; }
+
+.container-grid {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 290px; }
+  .container-grid .row {
+    position: relative; }
+    .container-grid .row.center {
+      text-align: center; }
+  .container-grid .cols {
+    position: relative;
+    float: left; }
+  .container-grid.border .cols {
+    border: 1px solid #ccc; }
+
+/* MOBILE 0 - $grid-display-mobiles */
+.container-grid .cols.col-1,
+.container-grid .cols.col-2 {
+  width: 50%; }
+
+.container-grid .cols.col-3,
+.container-grid .cols.col-4,
+.container-grid .cols.col-5,
+.container-grid .cols.col-6,
+.container-grid .cols.col-7,
+.container-grid .cols.col-8,
+.container-grid .cols.col-9,
+.container-grid .cols.col-10,
+.container-grid .cols.col-11,
+.container-grid .cols.col-12 {
+  width: 100%; }
+
+/* TABLETS $grid-display-tablets - $grid-display-pc */
+@media (min-width: 768px) {
+  .container-grid .cols.col-1,
+  .container-grid .cols.col-2 {
+    width: 16.66666666%; }
+  .container-grid .cols.col-3 {
+    width: 25%; }
+  .container-grid .cols.col-4 {
+    width: 33.333333333%; }
+  .container-grid .cols.col-5 {
+    width: 41.666666666%; }
+  .container-grid .cols.col-6 {
+    width: 50%; }
+  .container-grid .cols.col-7 {
+    width: 58.333333333%; }
+  .container-grid .cols.col-8 {
+    width: 66.666666666%; }
+  .container-grid .cols.col-9 {
+    width: 75%; }
+  .container-grid .cols.col-10 {
+    width: 83.333333333%; }
+  .container-grid .cols.col-11 {
+    width: 91.666666666%; }
+  .container-grid .cols.col-12 {
+    width: 100%; } }
+
+/* PC $grid-display-pc - $grid-display-large*/
+@media (min-width: 980px) {
+  .container-grid {
+    width: 960px; }
+  .container-grid .cols.col-1 {
+    width: 8.333333333%; }
+  .container-grid .cols.col-2 {
+    width: 16.66666666%; }
+  .container-grid .cols.col-3 {
+    width: 25%; }
+  .container-grid .cols.col-4 {
+    width: 33.333333333%; }
+  .container-grid .cols.col-5 {
+    width: 41.666666666%; }
+  .container-grid .cols.col-6 {
+    width: 50%; }
+  .container-grid .cols.col-7 {
+    width: 58.333333333%; }
+  .container-grid .cols.col-8 {
+    width: 66.666666666%; }
+  .container-grid .cols.col-9 {
+    width: 75%; }
+  .container-grid .cols.col-10 {
+    width: 83.333333333%; }
+  .container-grid .cols.col-11 {
+    width: 91.666666666%; }
+  .container-grid .cols.col-12 {
+    width: 100%; } }
+
+/* LARGE $grid-display-large - xxx */
+@media (min-width: 1200px) {
+  .container-grid {
+    width: 1170px; } }
+
+.wrap-nav {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+  .wrap-nav ul {
+    margin: 0;
+    padding: 0; }
+
+.js-touch-menu {
+  display: block;
+  background: #212121;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none; }
+  .js-touch-menu:hover {
+    background: #313131; }
+  .js-touch-menu:after {
+    content: "";
+    background-image: url(../sprites/sprite.png);
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    margin-top: 2px; }
+
+.nav {
+  display: block;
+  overflow-y: hidden;
+  max-height: 0;
+  transition-property: max-height;
+  transition-duration: 500ms; }
+  .nav.opened {
+    max-height: 500px; }
+  .nav li {
+    display: block;
+    /* LEVEL 2*/ }
+    .nav li a {
+      display: block;
+      padding: 10px 15px;
+      font-weight: bold;
+      font-size: 14px;
+      background: #fff;
+      color: #666;
+      border-bottom: 1px solid #eee;
+      border-left: 3px solid transparent;
+      text-align: left;
+      text-decoration: none;
+      white-space: nowrap;
+      transition-property: background, color, border;
+      transition-duration: 300ms; }
+      .nav li a:hover {
+        background: #f0f0f0;
+        color: #333;
+        border-left: 3px solid #313131; }
+    .nav li ul {
+      display: none; }
+
+@media (min-width: 768px) {
+  .wrap-nav {
+    display: table; }
+  .js-touch-menu {
+    display: none; }
+  .nav {
+    display: table-row;
+    background: #212121;
+    max-height: auto;
+    overflow-y: visible; }
+    .nav.opened {
+      max-height: auto; }
+    .nav li {
+      display: table-cell;
+      position: relative;
+      /* LEVEL 2*/ }
+      .nav li a {
+        background: transparent;
+        color: #fff;
+        text-align: center;
+        border-bottom: 0px;
+        border-left: 0px; }
+        .nav li a:hover {
+          background: #313131;
+          color: #fff;
+          border-left: 0px; }
+      .nav li ul {
+        display: block;
+        position: absolute;
+        background: #313131;
+        z-index: 100;
+        width: 100%;
+        left: 0; }
+        .nav li ul li {
+          display: block; }
+        .nav li ul a:hover {
+          color: #D35353; }
+      .nav li ul {
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+        -webkit-transform-origin: 50% 0;
+        transition: 350ms; }
+      .nav li:hover ul {
+        max-height: 1000px;
+        -webkit-transform: perspective(400) rotate3d(0, 0, 0, 0); } }
+
+/* Responsive table */
+table.responsive {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+table.responsive tr {
+  border: 1px solid #ddd;
+  padding: 5px; }
+
+table.responsive th, table.responsive td {
+  padding: 10px; }
+
+@media screen and (max-width: 767px) {
+  table.responsive {
+    border: 0; }
+  table.responsive thead {
+    display: none; }
+  table.responsive tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #ddd; }
+  table.responsive td {
+    display: block;
+    width: 100%\9;
+    float: left\9;
+    text-align: right;
+    border-bottom: 1px dotted #ccc; }
+  table.responsive td:last-child {
+    border-bottom: 0; }
+  table.responsive td:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold; } }
+
+.button {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  padding: 0 40px;
+  margin: 10px 15px;
+  height: 48px;
+  line-height: 48px;
+  border: 1px solid #212121;
+  border-radius: 2px;
+  color: #212121;
+  font-size: 20px;
+  text-decoration: none;
+  transition-property: background-color, color;
+  transition-duration: .3s; }
+  .button:hover {
+    background-color: #212121;
+    color: #fff; }
+
+/*
+* Shame
+*/
