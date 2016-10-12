@@ -20,9 +20,6 @@ const twig = require('gulp-twig');
  */
 
 gulp.task('start', function() {
-  // browserSync.init({
-  //   proxy: config.proxy
-  // });
   browserSync.init(config.browserSync);
 });
 
