@@ -20,13 +20,13 @@ $nav-icon-width: 20px;
 $nav-icon-height: 20px;
 $nav-icon-total-width: 20px;
 $nav-icon-total-height: 20px;
-$nav-icon-image: '../sprites/sprite.png';
-$nav-icon: (0px, 0px, 0px, 0px, 20px, 20px, 20px, 20px, '../sprites/sprite.png', 'nav-icon', );
+$nav-icon-image: '/dist/sprites/sprite.png';
+$nav-icon: (0px, 0px, 0px, 0px, 20px, 20px, 20px, 20px, '/dist/sprites/sprite.png', 'nav-icon', );
 $spritesheet-width: 20px;
 $spritesheet-height: 20px;
-$spritesheet-image: '../sprites/sprite.png';
+$spritesheet-image: '/dist/sprites/sprite.png';
 $spritesheet-sprites: ($nav-icon, );
-$spritesheet: (20px, 20px, '../sprites/sprite.png', $spritesheet-sprites, );
+$spritesheet: (20px, 20px, '/dist/sprites/sprite.png', $spritesheet-sprites, );
 
 /*
 The provided mixins are intended to be used with the array-like variables

@@ -16,43 +16,14 @@ const flexibility = require('postcss-flexibility');
 const twig = require('gulp-twig');
 
 /**
- * Paths to project folders
- */
-
-const paths = {
-  html: {
-    src: 'app/src/twig/*.twig',
-    watch: 'app/src/twig/**/*.twig',
-    dist: 'app/view/'
-  },
-  sprites: {
-    src: 'app/src/sprites/*',
-    dist: 'app/dist/sprites/',
-    imgName: 'sprite.png',
-    cssName: '_sprite.scss',
-    imgPath: '../sprites/sprite.png',
-    utils: 'app/src/styles/utils/'
-  },
-  styles: {
-    src: 'app/src/styles/**/*.{scss,sass}',
-    dist: 'app/dist/css/'
-  },
-  scripts: {
-    srcFirstLoad: 'app/src/scripts/first-load/*.js',
-    srcVendor: 'app/src/scripts/vendors/*.js',
-    src: 'app/src/scripts/*.js',
-    dist: 'app/dist/js/',
-  }
-};
-
-/**
  * Gulp Taks
  */
 
 gulp.task('start', function() {
-  browserSync.init({
-    proxy: config.proxy
-  });
+  // browserSync.init({
+  //   proxy: config.proxy
+  // });
+  browserSync.init(config.browserSync);
 });
 
 gulp.task('reload', function () {
@@ -60,21 +31,21 @@ gulp.task('reload', function () {
 });
 
 gulp.task('build:sprites', function () {
-  var spriteData = gulp.src(paths.sprites.src)
+  var spriteData = gulp.src(config.paths.sprites.src)
     .pipe(spritesmith({
-      imgName: paths.sprites.imgName,
-      cssName: paths.sprites.cssName,
-      imgPath : paths.sprites.imgPath,
+      imgName: config.paths.sprites.imgName,
+      cssName: config.paths.sprites.cssName,
+      imgPath : config.paths.sprites.imgPath,
       cssFormat: 'scss',
       algorithm: 'top-down',
       padding: 40
     }));
-  spriteData.img.pipe(gulp.dest(paths.sprites.dist));
-  return spriteData.css.pipe(gulp.dest(paths.sprites.utils));
+  spriteData.img.pipe(gulp.dest(config.paths.sprites.dist));
+  return spriteData.css.pipe(gulp.dest(config.paths.sprites.utils));
 });
 
 gulp.task('build:css', ['build:sprites'], function(){
-  return gulp.src([paths.styles.src])
+  return gulp.src([config.paths.styles.src])
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -83,18 +54,18 @@ gulp.task('build:css', ['build:sprites'], function(){
     .pipe(sass())
     .pipe(autoprefixer('last 2 versions'))
     .pipe(postcss([flexibility]))
-    .pipe(gulp.dest(paths.styles.dist))
+    .pipe(gulp.dest(config.paths.styles.dist))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(gulp.dest(paths.styles.dist))
+    .pipe(gulp.dest(config.paths.styles.dist))
     .pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('build:js', function(){
   return gulp.src([
-    paths.scripts.srcFirstLoad,
-    paths.scripts.srcVendor,
-    paths.scripts.src,
+    config.paths.scripts.srcFirstLoad,
+    config.paths.scripts.srcVendor,
+    config.paths.scripts.src,
   ])
     .pipe(plumber({
       errorHandler: function (error) {
@@ -105,22 +76,22 @@ gulp.task('build:js', function(){
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(gulp.dest(paths.scripts.dist))
+    .pipe(gulp.dest(config.paths.scripts.dist))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.scripts.dist))
+    .pipe(gulp.dest(config.paths.scripts.dist))
     .pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('build:html', function () {
-  return gulp.src(paths.html.src)
+  return gulp.src(config.paths.html.src)
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
         this.emit('end');
     }}))
     .pipe(twig())
-    .pipe(gulp.dest(paths.html.dist))
+    .pipe(gulp.dest(config.paths.html.dist))
     .pipe(browserSync.reload({stream:true}));
 });
 
@@ -131,7 +102,7 @@ gulp.task('compile', [
 ]);
 
 gulp.task('default', ['start'], function(){
-  gulp.watch(paths.styles.src, ['build:css']);
-  gulp.watch(paths.scripts.src, ['build:js']);
-  gulp.watch(paths.html.watch, ['build:html']);
+  gulp.watch(config.paths.styles.src, ['build:css']);
+  gulp.watch(config.paths.scripts.src, ['build:js']);
+  gulp.watch(config.paths.html.watch, ['build:html']);
 });
