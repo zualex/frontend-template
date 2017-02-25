@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Frontend template - Простой адаптивный шаблон от Александра Зубарева — zualex</title>
+  <meta name="keywords" content="Frontend template адаптивный шаблон александр зубарев zualex веб разработчик программист">
+  <meta name="description" content="Frontend template - Простой адаптивный шаблон от Александра Зубарева — zualex">
+  <meta name="author" content="zualex" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="/dist/css/main.min.css">
+</head>
+<body>
+  
+
+<header class="header-section">
+    <div class="container-grid">
+      <div class="row center">
+        <div class="cols col-12">
+          <h1>Frontend template</h1>
+          <p>Simple responsive template from <a href="http://zualex.com/" target="_blank">Zualex<a/></p>
+          <p class="button-section">
+            <a class="button invisible-xs visible-md" href="https://github.com/zualex32/frontend-template/archive/master.zip">Download</a>
+            <a class="button" href="https://github.com/zualex32/frontend-template">Github</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-section">
+    <div class="container-grid">
+      <div class="row">
+        <div class="cols col-12">
+          <h2>Menu</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cols col-12">
+          <a href="javascript:void(0);" class="js-touch-menu">Mobile menu</a>
+
+          <nav class="menu">
+            <ul class="menu__list js-nav-menu">
+              <li class="menu__item">
+                <a class="menu__link" href="#Gulp">Gulp</a>
+              </li>
+              <li>
+                <a class="menu__link" href="#">Sass</a>
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">SCSS</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">Variable</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">Mixin</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">Auto sprite</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">ES 6</a>
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">const</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">let</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">function</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Twig</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">BrowserSync</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Flexibility</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Autoprefixer</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="wrap-nav">
+            <ul class="nav js-nav-menu">
+              <li><a href="#">Gulp</a></li>
+              <li>
+                <a href="#">Sass</a>
+                <ul>
+                  <li><a href="#">SCSS</a></li>
+                  <li><a href="#">Variable</a></li>
+                  <li><a href="#">Mixin</a></li>
+                  <li><a href="#">Auto sprite</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">ES 6</a>
+                <ul>
+                  <li><a href="#">const</a></li>
+                  <li><a href="#">let</a></li>
+                  <li><a href="#">function</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Twig</a></li>
+              <li><a href="#">BrowserSync</a></li>
+              <li><a href="#">Flexibility</a></li>
+              <li><a href="#">Autoprefixer</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="page-section">
+    <div class="container-grid">
+      <div class="row">
+        <div class="cols col-12">
+          <h2>Responsive table</h2>
+        </div>
+      </div>
+      <div class="row">
+        <table class="responsive">
+          <thead>
+          <tr>
+            <th>№</th>
+            <th>Name</th>
+            <th>Count</th>
+            <th>Price</th>
+            <th>Sum</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td data-label="№">1000</td>
+            <td data-label="Name">Hamster fluffy</td>
+            <td data-label="Count">1</td>
+            <td data-label="Price">$ 199.00</td>
+            <td data-label="Sum">$ 199.00</td>
+          </tr>
+          <tr>
+            <td data-label="№">1001</td>
+            <td data-label="Name">Leash for hamster</td>
+            <td data-label="Count">2</td>
+            <td data-label="Price">$ 100.00</td>
+            <td data-label="Sum">$ 200.00</td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="page-section">
+    <div class="container-grid">
+      <div class="row">
+        <div class="cols col-12">
+          <h2>Image</h2>
+          <p>
+            In this example, initially loaded small picture 375x500, continue using media queries for different screen sizes loaded big pictures.<br>
+            medium.jpg - 0 to 768px<br>
+            large.jpg - 768px to 1200px<br>
+            extralarge.jpg - from 1200px<br>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cols col-6">
+          <picture>
+            <source srcset="../images/extralarge.jpg" media="(min-width: 1200px)">
+            <source srcset="../images/large.jpg" media="(min-width: 768px)">
+            <img srcset="../images/medium.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+          </picture>
+        </div>
+        <div class="cols col-6">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, dicta, quas fugit pariatur non similique reiciendis at. Culpa, libero, delectus, blanditiis ut aspernatur numquam voluptatum quas veniam veritatis illum error.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="page-section">
+    <div class="container-grid">
+      <div class="row">
+        <div class="cols col-12">
+          <h2>Grid</h2>
+          <p>
+            Grid has 12 columns<br>
+            Mobile - 0 to 768px<br>
+            Desktop - 768px to 1200px<br>
+            Big desktop - from 1200px<br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container-grid border">
+      <div class="row">
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+        <div class="cols col-1">col-1</div>
+      </div>
+      <div class="row">
+        <div class="cols col-2">col-2</div>
+        <div class="cols col-2">col-2</div>
+        <div class="cols col-2">col-2</div>
+        <div class="cols col-2">col-2</div>
+        <div class="cols col-2">col-2</div>
+        <div class="cols col-2">col-2</div>
+      </div>
+      <div class="row">
+        <div class="cols col-3">col-3</div>
+        <div class="cols col-3">col-3</div>
+        <div class="cols col-3">col-3</div>
+        <div class="cols col-3">col-3</div>
+      </div>
+      <div class="row">
+        <div class="cols col-4">col-4</div>
+        <div class="cols col-4">col-4</div>
+        <div class="cols col-4">col-4</div>
+      </div>
+      <div class="row">
+        <div class="cols col-5">col-5</div>
+        <div class="cols col-5">col-5</div>
+        <div class="cols col-2">col-2</div>
+      </div>
+      <div class="row">
+        <div class="cols col-6">col-6</div>
+        <div class="cols col-6">col-6</div>
+      </div>
+      <div class="row">
+        <div class="cols col-7">col-7</div>
+        <div class="cols col-5">col-5</div>
+      </div>
+      <div class="row">
+        <div class="cols col-8">col-8</div>
+        <div class="cols col-4">col-4</div>
+      </div>
+      <div class="row">
+        <div class="cols col-9">col-9</div>
+        <div class="cols col-3">col-3</div>
+      </div>
+      <div class="row">
+        <div class="cols col-10">col-10</div>
+        <div class="cols col-2">col-2</div>
+      </div>
+      <div class="row">
+        <div class="cols col-11">col-11</div>
+        <div class="cols col-1">col-1</div>
+      </div>
+      <div class="row">
+        <div class="cols col-12">col-12</div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="/dist/js/main.min.js"></script>
+</body>
+</html>

@@ -1,36 +1,39 @@
 {
   "name": "frontend-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "frontend-template",
   "main": "gulpfile.js",
-  "dependencies": {
-	"gulp": "*",
-	"bower": "*",
-    "gulp-sass": "*",
-    "gulp.spritesmith": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-concat": "*",
-    "gulp-minify-css": "*",
-    "gulp-rename": "*",
-    "gulp-uglify": "*",
-    "gulp-main-bower-files": "*",
-    "gulp-filter": "*",
-    "browser-sync": "*"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zualex32/frontend-template.git"
+    "url": "git+https://zualex@github.com/zualex/frontend-template.git"
   },
   "keywords": [
     "frontend-template"
   ],
-  "author": "zualex32",
+  "author": "zualex",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zualex32/frontend-template/issues"
+    "url": "https://github.com/zualex/frontend-template/issues"
   },
-  "homepage": "https://github.com/zualex32/frontend-template#readme"
+  "homepage": "https://github.com/zualex/frontend-template#readme",
+  "dependencies": {
+    "gulp-minify-css": "^1.2.4",
+    "gulp-twig": "^0.5.0",
+    "babel-preset-es2015": "^6.16.0",
+    "browser-sync": "^2.17.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp.spritesmith": "^6.2.1",
+    "postcss-flexibility": "^1.1.0"
+  }
 }

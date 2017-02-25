@@ -1,67 +1,50 @@
-# Простой адаптивный шаблон
-В шаблоне используются адаптивные:
-<ul>
-  <li>Cетка из 12 колонок</li>
-  <li>Таблица</li>
-  <li>Меню с 4 типами анимации:
-		<ul>
-			<li>Fold Out</li>
-			<li>Slide Down</li>
-			<li>Fade In/Out</li>
-			<li>Not Animated</li>
-		</ul>
-  </li>
-</ul>
+# Simple responsive template
+The template used responsive:
+- Grid of 12 columns
+- Table
+- Menu with 4 types of animation:
+  - Fold Out
+  - Slide Down
+  - Fade In/Out
+  - Not Animated
 
-Также в шаблоне применяются:
-<ul>
-  <li><a href="http://gulpjs.com/">Gulp</a></li>
-  <li><a href="http://bower.io/">Bower</a></li>
-  <li><a href="https://www.browsersync.io/">Browser-sync</a> - автоматическая перезагрузка страницы при изменении кода</li>
-  <li><a href="http://sass-lang.com/">Sass</a></li>
-  <li><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a></li>
-  <li>Объединение и сжатие CSS и JS</li>
-  <li>Объединение изображений в спрайт</li>
-  <li><a href="http://sass-guidelin.es/ru/">Руководство по написанию разумного, поддерживаемого и масштабируемого Sass</a></li>
-</ul>
 
-# Начало
-Для того чтобы использовать данный шаблон, необходим установленный <a href="https://nodejs.org">Node.JS<a>.
-Установить все нужные пакеты можно через npm, выполнив следующую команду:
+The template uses:
+- [Gulp](http://gulpjs.com/)
+- [Browser-sync](https://www.browsersync.io/) - automatic restart when changing the code page
+- [Sass](http://sass-lang.com/)
+- [Autoprefixer](https://github.com/postcss/autoprefixer)
+- Merge and compress CSS and JavaScript
+- Combining images into a sprite
+- [Sass Guidelines](http://sass-guidelin.es/) An opinionated styleguide for writing sane, maintainable and scalable Sass.
 
+
+## Get started
+Install packages:
 ```bash
 npm install
 ```
 
-Далее необходимо установить сторонние библиотеки, выполнив следующую команду:
-
+Create environment file:
 ```bash
-bower install
+cp config.json.example config.json
 ```
 
 
-# Практика
-Запустить сборщик с использованием browser-sync, можно выполнив следующую команду:
+And run command:
 ```bash
-gulp serve
+gulp
 ```
-<br>
-Дождитесь выполнения команды, по завершению в браузере откроется страница `http://localhost:3000/`.<br>
-Теперь при изменении файлов `*.html`, `/src/sass/` и `/src/js/`, автоматически произойдет сборка проекта и перезагрузится страница в браузере.<br>
-<br>
-В папке `src` необходимо писать CSS и JS код, а также загружать изображения для спрайтов.<br>
-В папку `dist` сборщик выплевывает готовые файлы.<br>
-<br>
-Сущестую следующие команды для gulp:<br>
-`gulp` - запуск полной сборки проекта.<br>
-`gulp watch` - запуск сборки проекта, только при изменении в файлах `/src/sass/` и `/src/js/`.<br>
-`gulp serve` - запуск сборки проектас использованием browser-sync.<br>
-`gulp js` - объединение и сжатие JS файлов.<br>
-`gulp css` - объединение и сжатие css файлов.<br>
-`gulp sass` - scss файлы преобразует в css файлы.<br>
-`gulp sprite` - генерация спрайтов.<br>
-`gulp bower` - получение и объединение стороних JS и CSS файлов.<br>
-<br>
-Для того чтобы установить тип анимации меню на "Slide Down" нужно в файле "<a href="https://github.com/zualex32/frontend-template/blob/master/build/sass/utils/_variables.scss" >/build/sass/utils/_variables.scss</a>" изменить значение переменной $menu-type-animation на "Slide Down".
 
+## Commands gulp
+- `gulp start` - run browserSync
+- `gulp reload` - reload browserSync
+- `gulp build:sprites` - combining images into a sprite
+- `gulp build:css` - merge and compress CSS
+- `gulp build:js` - merge and compress JavaScript
+- `gulp build:html` - build html from twig
+- `gulp compile` - run commands `build:sprites`, `build:css`, `build:js`, `build:html`
+- `gulp` - run command `start`, `compile` and watch file
 
+## Сonfig
+In config.json file specifies the path to the source

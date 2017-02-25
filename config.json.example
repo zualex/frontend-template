@@ -1,0 +1,32 @@
+{
+  "browserSync" : {
+    "server" : {
+      "baseDir" : "./public"
+    }
+  },
+  "paths" : {
+    "html" : {
+      "src"  : "src/twig/*.twig",
+      "watch" : "src/twig/**/*.twig",
+      "dist" : "public/"
+    },
+    "sprites" : {
+      "src" : "src/sprites/*",
+      "dist" : "public/dist/sprites/",
+      "imgName" : "sprite.png",
+      "cssName" : "_sprite.scss",
+      "imgPath" : "/dist/sprites/sprite.png",
+      "utils" : "src/styles/utils/"
+    },
+    "styles" : {
+      "src" : "src/styles/**/*.{scss,sass}",
+      "dist" : "public/dist/css/"
+    },
+    "scripts" : {
+      "srcFirstLoad" : "src/scripts/first-load/*.js",
+      "srcVendor" : "src/scripts/vendors/*.js",
+      "src" : "src/scripts/*.js",
+      "dist" : "public/dist/js/"
+    }
+  }
+}
