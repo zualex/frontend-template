@@ -1,4 +1,41 @@
 .menu {
+  display:table;
+  width:100%;
+  margin: 0;
+  padding: 0;
+
+  &__list {
+    display: none;
+    background: $menu-background;
+    max-height: auto;
+    overflow-y: visible;
+    margin: 0;
+    padding: 0;
+
+    &--opened {
+      display: table-row;
+      max-height: auto;
+    }
+  }
+
+  &__item {
+      display: table-cell;
+      position: relative;
+  }
+
+  &__link {
+    background:transparent;
+    color: $menu-color-text;
+    text-align:center;
+    border-bottom:0px;
+    border-left:0px;
+
+    &:hover{
+      background: $menu-background-hover;
+      color: $menu-color-text-hover;
+      border-left:0px;
+    }
+  }
 
   @include tablet {
 

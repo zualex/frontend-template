@@ -198,6 +198,35 @@ a {
   .container-grid {
     width: 1170px; } }
 
+.menu {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+  .menu__list {
+    display: none;
+    background: #212121;
+    max-height: auto;
+    overflow-y: visible;
+    margin: 0;
+    padding: 0; }
+    .menu__list--opened {
+      display: table-row;
+      max-height: auto; }
+  .menu__item {
+    display: table-cell;
+    position: relative; }
+  .menu__link {
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    border-bottom: 0px;
+    border-left: 0px; }
+    .menu__link:hover {
+      background: #313131;
+      color: #fff;
+      border-left: 0px; }
+
 .wrap-nav {
   display: block;
   width: 100%;

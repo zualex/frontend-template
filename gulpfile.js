@@ -98,7 +98,7 @@ gulp.task('compile', [
   'build:html'
 ]);
 
-gulp.task('default', ['start'], function(){
+gulp.task('default', ['start', 'compile'], function(){
   gulp.watch(config.paths.styles.src, ['build:css']);
   gulp.watch(config.paths.scripts.src, ['build:js']);
   gulp.watch(config.paths.html.watch, ['build:html']);
